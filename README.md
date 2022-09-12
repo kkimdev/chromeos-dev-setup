@@ -18,6 +18,9 @@ cp ~/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf ~/.c
 
 
 # Podman
+
+sudo apt-get install -y podman
+
 ## https://github.com/containers/podman/issues/2542#issuecomment-522932449
 sudo touch /etc/sub{u,g}id
 sudo usermod --add-subuids 10000-75535 $(whoami)

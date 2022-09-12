@@ -11,6 +11,12 @@ Other things
 ```
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
+# History arrow search
+# https://wiki.archlinux.org/title/bash#History_completion
+cat << EOF > ~/.inputrc
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+EOF
 
 # Chrome OS shortcuts in Linux apps
 # https://www.reddit.com/r/Crostini/wiki/enable-chrome-shortcuts-in-linux-apps

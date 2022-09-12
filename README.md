@@ -1,11 +1,19 @@
 # os-setup
 
 ## Crostini
+- https://old.reddit.com/r/Crostini/wiki/index
+
+Other things
+- https://wiki.archlinux.org/title/bash
+-  Arrow history, ble.sh, bash-it, ohmybash
+- preyproject
+
 ```
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 
-# Chrome OS shortcuts in Crostini
+# Chrome OS shortcuts in Linux apps
+# https://www.reddit.com/r/Crostini/wiki/enable-chrome-shortcuts-in-linux-apps
 mkdir -p ~/.config/systemd/user/sommelier@.service.d/
 mkdir -p ~/.config/systemd/user/sommelier-x@.service.d/
 
@@ -30,9 +38,3 @@ podman system migrate
 ## https://github.com/containers/podman/issues/11037#issuecomment-947050246
 printf '[containers]\nkeyring=false\n' | sudo tee /etc/containers/containers.conf
 ```
-
-Other things:
-- https://wiki.archlinux.org/title/bash
--  Arrow history, ble.sh, bash-it, ohmybash
-- ChromsOS shortcut in Linux apps https://www.reddit.com/r/Crostini/wiki/enable-chrome-shortcuts-in-linux-apps
-- preyproject

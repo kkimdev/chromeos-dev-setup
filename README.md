@@ -8,7 +8,7 @@ Other things
 -  Arrow history, ble.sh, bash-it, ohmybash
 - preyproject
 
-```
+```bash
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 # History arrow search

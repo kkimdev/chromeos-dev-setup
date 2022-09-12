@@ -1,6 +1,6 @@
 # os-setup
 
-## Chrostini
+## Crostini
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 

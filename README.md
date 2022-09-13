@@ -33,7 +33,8 @@ cat << EOF > ~/.config/systemd/user/sommelier@.service.d/cros-sommelier-override
 Environment="SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal,<Alt>1,<Alt>2,<Alt>3,<Alt>4,<Alt>5,<Alt>6,<Alt>7,<Alt>8,<Alt>9"
 EOF
 
-cp ~/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf ~/.config/systemd/user/sommelier-x@.service.d/cros-sommelier-override.conf
+cp ~/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf \
+   ~/.config/systemd/user/sommelier-x@.service.d/cros-sommelier-x-override.conf
 
 
 # Podman

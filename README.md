@@ -7,6 +7,8 @@ Other things
 - https://wiki.archlinux.org/title/bash
 -  Arrow history, ble.sh, bash-it, ohmybash
 - preyproject
+- shopt -s histappend 
+
 
 ```bash
 sudo apt-get update && sudo apt-get dist-upgrade -y
@@ -14,8 +16,10 @@ sudo apt-get update && sudo apt-get dist-upgrade -y
 # History arrow search
 # https://wiki.archlinux.org/title/bash#History_completion
 cat << EOF > ~/.inputrc
+# https://codeinthehole.com/tips/the-most-important-command-line-tip-incremental-history-searching-with-inputrc/
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+set show-all-if-ambiguous on
 EOF
 
 # Chrome OS shortcuts in Linux apps

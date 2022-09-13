@@ -36,6 +36,7 @@ EOF
 cp ~/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf \
    ~/.config/systemd/user/sommelier-x@.service.d/cros-sommelier-x-override.conf
 
+sudo halt --reboot
 
 # Podman
 

@@ -5,9 +5,10 @@
 
 Other things
 - https://wiki.archlinux.org/title/bash
--  Arrow history, ble.sh, bash-it, ohmybash
+- ble.sh, bash-it, ohmybash
 - preyproject
 - shopt -s histappend 
+- Snap install https://chromeunboxed.com/install-snap-packages-chromebook-crostini-linux-how-to/
 
 
 ```bash

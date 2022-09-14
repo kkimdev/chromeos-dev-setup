@@ -12,7 +12,9 @@ Other things
 
 
 ```bash
-sudo apt-get update && sudo apt-get dist-upgrade -y
+# Null command at the end to prevent `apt-get` swallowing the following inputs.
+# https://serverfault.com/questions/342697/prevent-sudo-apt-get-etc-from-swallowing-pasted-input-to-stdin
+sudo apt-get update && sudo apt-get dist-upgrade -y && :
 
 # History arrow search
 # https://wiki.archlinux.org/title/bash#History_completion

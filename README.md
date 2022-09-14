@@ -42,7 +42,7 @@ sudo halt --reboot
 
 # Podman
 
-sudo apt-get install -y podman
+sudo apt-get install -y podman && :
 
 ## https://github.com/containers/podman/issues/2542#issuecomment-522932449
 sudo touch /etc/sub{u,g}id

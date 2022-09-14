@@ -66,7 +66,7 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packag
 rm -f packages.microsoft.gpg
 sudo apt install apt-transport-https
 sudo apt update
-sudo apt install code # or code-insiders
+sudo apt install code
 
 
 ```

@@ -68,5 +68,14 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code
 
-
+# Bash-it
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+cd ~/.bash_it
+git fetch --tags
+git checkout "$(git describe --tags "$(git rev-list --tags --max-count=1)")"
+cd ..
+~/.bash_it/install.sh --silent --append-to-config
+sed -i '/export BASH_IT_THEME=/s/.*/export BASH_IT_THEME="powerline"/' ~/.bashrc
+# shellcheck disable=SC1090  # ~/.bashrc is generated.
+source ~/.bashrc
 ```

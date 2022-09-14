@@ -51,5 +51,6 @@ sudo usermod --add-subgids 10000-75535 $(whoami)
 podman system migrate
 
 ## https://github.com/containers/podman/issues/11037#issuecomment-947050246
+sudo mkdir -p /etc/containers/
 printf '[containers]\nkeyring=false\n' | sudo tee /etc/containers/containers.conf
 ```

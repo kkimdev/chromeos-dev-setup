@@ -10,6 +10,9 @@ Other things
 - shopt -s histappend 
 - Snap install https://chromeunboxed.com/install-snap-packages-chromebook-crostini-linux-how-to/
 
+Useful Chrome extensions
+- https://chrome.google.com/webstore/detail/window-shortcut-placer-ch/hcbbigdopjopjofpnpojicpkncepklli
+- https://chrome.google.com/webstore/detail/window-relative-position/bkddeedcnaejmjmadijljckjoddhnnfk
 
 ```bash
 # Null command at the end to prevent `apt-get` swallowing the following inputs.

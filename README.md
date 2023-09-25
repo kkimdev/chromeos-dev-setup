@@ -9,6 +9,10 @@ Other things
 - preyproject
 - shopt -s histappend 
 - Snap install https://chromeunboxed.com/install-snap-packages-chromebook-crostini-linux-how-to/
+- Nix
+- Developer mode
+  - https://www.reddit.com/r/ChromeOSFlex/comments/swxlz8/tutorial_enable_developer_mode_on_cros/
+  - https://www.reddit.com/r/ChromeOSFlex/comments/1449a13/guide_reenable_chromeos_flex_developer_mode/
 
 Useful Chrome extensions
 - https://chrome.google.com/webstore/detail/window-shortcut-placer-ch/hcbbigdopjopjofpnpojicpkncepklli

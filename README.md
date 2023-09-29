@@ -85,4 +85,13 @@ cd ..
 sed -i '/export BASH_IT_THEME=/s/.*/export BASH_IT_THEME="powerline"/' ~/.bashrc
 # shellcheck disable=SC1090  # ~/.bashrc is generated.
 source ~/.bashrc
+
+# Nix on Crostini
+# https://nixos.wiki/wiki/Installing_Nix_on_Crostini
+mkdir -p ~/.config/systemd/user/cros-garcon.service.d/
+cat > ~/.config/systemd/user/cros-garcon.service.d/override.conf <<EOF
+[Service]
+Environment="PATH=%h/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/local/games:/usr/sbin:/usr/bin:/usr/games:/sbin:/bin"
+Environment="XDG_DATA_DIRS=%h/.nix-profile/share:%h/.local/share:/usr/local/share:/usr/share"
+EOF
 ```

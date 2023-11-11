@@ -118,3 +118,6 @@ append_if_not_exist 'eval "$(direnv hook bash)"' ~/.bashrc
 source ~/.bashrc
 
 ```
+
+## Nerd font on terminal
+https://www.reddit.com/r/Crostini/comments/s1dgvk/comment/jm9rix7/?utm_source=share&utm_medium=web2x&context=3

@@ -96,8 +96,14 @@ git fetch --tags
 git checkout "$(git describe --tags "$(git rev-list --tags --max-count=1)")"
 cd ..
 ~/.bash_it/install.sh --silent --append-to-config
-sed -i '/export BASH_IT_THEME=/s/.*/export BASH_IT_THEME="powerline"/' ~/.bashrc
-# shellcheck disable=SC1090  # ~/.bashrc is generated.
+# Theme disabled
+# sed -i '/export BASH_IT_THEME=/s/.*/export BASH_IT_THEME="powerline"/' ~/.bashrc
+source ~/.bashrc
+
+# starship prompt theme
+nix profile install nixpkgs#starship
+starship preset tokyo-night -o ~/.config/starship.toml
+grep -qxF 'eval "$(starship init bash)"' ~/.bashrc || echo 'eval "$(starship init bash)"' >> ~/.bashrc
 source ~/.bashrc
 
 ```

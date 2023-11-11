@@ -106,4 +106,15 @@ starship preset tokyo-night -o ~/.config/starship.toml
 grep -qxF 'eval "$(starship init bash)"' ~/.bashrc || echo 'eval "$(starship init bash)"' >> ~/.bashrc
 source ~/.bashrc
 
+# direnv setup
+# https://direnv.net/docs/hook.html
+nix profile install nixpkgs#direnv
+append_if_not_exist() {
+  # https://stackoverflow.com/a/28021305
+  grep -xqF -- "$1" "$2" || echo "$1" >> "$2"
+}
+# shellcheck disable=SC2016  # Intended single quotes
+append_if_not_exist 'eval "$(direnv hook bash)"' ~/.bashrc
+source ~/.bashrc
+
 ```

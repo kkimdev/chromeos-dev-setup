@@ -23,6 +23,9 @@ Useful Chrome extensions
 # https://serverfault.com/questions/342697/prevent-sudo-apt-get-etc-from-swallowing-pasted-input-to-stdin
 sudo apt-get update && sudo apt-get dist-upgrade -y && :
 
+# command-not-found
+sudo apt-get install command-not-found -y && sudo apt update
+
 # Chrome OS shortcuts in Linux apps
 # https://www.reddit.com/r/Crostini/wiki/enable-chrome-shortcuts-in-linux-apps
 mkdir -p ~/.config/systemd/user/sommelier@.service.d/

@@ -119,5 +119,6 @@ source ~/.bashrc
 
 ```
 
-## Nerd font on terminal
-https://www.reddit.com/r/Crostini/comments/s1dgvk/comment/jm9rix7/?utm_source=share&utm_medium=web2x&context=3
+## Nerd font
+- Crostini Terminal: https://www.reddit.com/r/Crostini/comments/s1dgvk/comment/jm9rix7/?utm_source=share&utm_medium=web2x&context=3
+- VS Code: https://stackoverflow.com/a/68972770

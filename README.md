@@ -65,6 +65,9 @@ NIXPKGS_ALLOW_UNFREE=1 nix profile install nixpkgs#vscode --impure
 # Podman
 nix profile install nixpkgs#podman
 
+# micro
+nix profile install nixpkgs#micro
+
 ## https://github.com/containers/podman/issues/2542#issuecomment-522932449
 sudo touch /etc/sub{u,g}id
 sudo usermod --add-subuids 10000-75535 $(whoami)

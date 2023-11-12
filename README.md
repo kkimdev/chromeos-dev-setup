@@ -121,13 +121,30 @@ source ~/.bashrc
 
 ## Nerd font
 - Crostini Terminal: https://www.reddit.com/r/Crostini/comments/s1dgvk/comment/jm9rix7/?utm_source=share&utm_medium=web2x&context=3
-- VS Code: https://stackoverflow.com/a/68972770
 
-```
+```css
+/* chrome-untrusted://terminal/html/nassh_preferences_editor.html */
+
 @font-face {
 font-family: "JetBrainsMono Nerd Font";
 src: url(https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFont-Regular.ttf);
 font-weight: normal;
 font-style: normal;
 }
+```
+
+- VS Code: https://stackoverflow.com/a/68972770
+
+```bash
+nix profile install nixpkgs#nerdfonts
+
+mkdir -p ~/.config/fontconfig/conf.d/
+
+cat << EOF > ~/.config/fontconfig/conf.d/10-nix-fonts.conf
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+<fontconfig>
+  <dir>~/.nix-profile/share/fonts/</dir>
+</fontconfig>
+EOF
 ```

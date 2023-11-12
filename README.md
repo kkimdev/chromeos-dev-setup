@@ -88,7 +88,6 @@ cat << EOF > ~/.inputrc
 set show-all-if-ambiguous on
 EOF
 
-
 # Bash-it
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 cd ~/.bash_it
@@ -116,6 +115,9 @@ append_if_not_exist() {
 # shellcheck disable=SC2016  # Intended single quotes
 append_if_not_exist 'eval "$(direnv hook bash)"' ~/.bashrc
 source ~/.bashrc
+
+# Install fuck
+nix profile install nixpkgs#thefuck
 
 ```
 

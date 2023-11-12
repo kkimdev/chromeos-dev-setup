@@ -150,3 +150,8 @@ cat << EOF > ~/.config/fontconfig/conf.d/10-nix-fonts.conf
 </fontconfig>
 EOF
 ```
+
+# Nix upgrade
+```
+NIXPKGS_ALLOW_UNFREE=1 nix profile upgrade '.*' --impure
+```

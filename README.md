@@ -18,6 +18,10 @@ Useful Chrome extensions
 - https://chrome.google.com/webstore/detail/window-shortcut-placer-ch/hcbbigdopjopjofpnpojicpkncepklli
 - https://chrome.google.com/webstore/detail/window-relative-position/bkddeedcnaejmjmadijljckjoddhnnfk
 
+Terminal settings
+![image](https://github.com/kkimdev/os-setup/assets/503414/bded2e48-5274-4541-aef7-cdf24a1b9888)
+
+
 ```bash
 # Null command at the end to prevent `apt-get` swallowing the following inputs.
 # https://serverfault.com/questions/342697/prevent-sudo-apt-get-etc-from-swallowing-pasted-input-to-stdin

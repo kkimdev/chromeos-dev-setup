@@ -1,9 +1,8 @@
-# os-setup
+# Chromebook Setup
 
-## Crostini
 - https://old.reddit.com/r/Crostini/wiki/index
 
-Other things
+## Other things
 - https://wiki.archlinux.org/title/bash
 - ble.sh, bash-it, ohmybash
 - preyproject
@@ -14,11 +13,11 @@ Other things
   - https://www.reddit.com/r/ChromeOSFlex/comments/swxlz8/tutorial_enable_developer_mode_on_cros/
   - https://www.reddit.com/r/ChromeOSFlex/comments/1449a13/guide_reenable_chromeos_flex_developer_mode/
 
-Useful Chrome extensions
+## Useful Chrome extensions
 - https://chrome.google.com/webstore/detail/window-shortcut-placer-ch/hcbbigdopjopjofpnpojicpkncepklli
 - https://chrome.google.com/webstore/detail/window-relative-position/bkddeedcnaejmjmadijljckjoddhnnfk
 
-Terminal settings
+## Terminal settings
 ![image](https://github.com/kkimdev/os-setup/assets/503414/bded2e48-5274-4541-aef7-cdf24a1b9888)
 
 
@@ -155,7 +154,7 @@ cat << EOF > ~/.config/fontconfig/conf.d/10-nix-fonts.conf
 EOF
 ```
 
-# Nix upgrade
+## Nix upgrade
 ```
 NIXPKGS_ALLOW_UNFREE=1 nix profile upgrade '.*' --impure
 ```

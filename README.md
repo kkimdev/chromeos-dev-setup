@@ -157,6 +157,7 @@ EOF
 ## Nix upgrade
 ```
 NIXPKGS_ALLOW_UNFREE=1 nix profile upgrade '.*' --impure
+nix store gc
 ```
 
 ## [WIP] starship config

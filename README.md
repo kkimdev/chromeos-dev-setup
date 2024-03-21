@@ -17,6 +17,11 @@
 - https://chrome.google.com/webstore/detail/window-shortcut-placer-ch/hcbbigdopjopjofpnpojicpkncepklli
 - https://chrome.google.com/webstore/detail/window-relative-position/bkddeedcnaejmjmadijljckjoddhnnfk
 
+## Channel Update
+chrome://os-settings/help/details
+
+Beta channel is recommended
+
 ## Terminal settings
 ![image](https://github.com/kkimdev/os-setup/assets/503414/bded2e48-5274-4541-aef7-cdf24a1b9888)
 

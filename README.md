@@ -18,7 +18,7 @@
 - https://chrome.google.com/webstore/detail/window-relative-position/bkddeedcnaejmjmadijljckjoddhnnfk
 
 ## Channel Update
-chrome://os-settings/help/details
+[chrome://os-settings/help/details](chrome://os-settings/help/details)
 
 Beta channel is recommended
 

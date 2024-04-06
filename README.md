@@ -158,7 +158,22 @@ cat << EOF > ~/.config/fontconfig/conf.d/10-nix-fonts.conf
 </fontconfig>
 EOF
 ```
+## Github
 
+```bash
+# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+cat ~/.ssh/id_ed25519.pub
+# https://github.com/settings/keys
+
+git config --global user.name "..."
+git config --global user.email "..."
+
+```
 ## Nix upgrade
 ```
 NIXPKGS_ALLOW_UNFREE=1 nix profile upgrade '.*' --impure

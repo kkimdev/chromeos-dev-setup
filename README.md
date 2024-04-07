@@ -171,7 +171,8 @@ cat ~/.ssh/id_ed25519.pub
 # https://github.com/settings/keys
 
 git config --global user.name "..."
-git config --global user.email "..."
+git config --global user.email "..." # Use private email from https://github.com/settings/emails
+git config --global core.editor micro
 
 ```
 ## Nix upgrade

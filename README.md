@@ -172,9 +172,9 @@ cat ~/.ssh/id_ed25519.pub
 
 git config --global user.name "..."
 git config --global user.email "..." # Use private email from https://github.com/settings/emails
-git config --global core.editor 'code --wait'
+git config --global core.editor 'code --wait --new-window'
 git config --global diff.tool diff-code
-git config --global difftool.diff-code.cmd 'code --wait --diff $LOCAL $REMOTE'
+git config --global difftool.diff-code.cmd 'code --wait --new-window --diff $LOCAL $REMOTE'
 
 ```
 ## Nix upgrade

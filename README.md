@@ -86,6 +86,49 @@ podman system migrate
 sudo mkdir -p /etc/containers/
 printf '[containers]\nkeyring=false\n' | sudo tee /etc/containers/containers.conf
 
+# Required config for podman inside podman.
+# See https://www.redhat.com/sysadmin/podman-inside-container and
+# https://github.com/containers/podman/issues/11037#issuecomment-947050246
+touch /etc/containers/containers.conf
+tee /etc/containers/containers.conf << EOF
+[containers]
+keyring=false
+netns="host"
+userns="host"
+ipcns="host"
+utsns="host"
+cgroupns="host"
+cgroups="disabled"
+[engine]
+cgroup_manager="cgroupfs"
+events_logger="file"
+runtime="crun"
+EOF
+
+# TODO: We unnecessarily needed `--storage-driver vfs` for nested podmans.
+# https://stackoverflow.com/questions/72156494/is-it-possible-to-nest-docker-podman-containers
+# TODO: Add this only when it's built as a container image.
+touch /etc/containers/storage.conf
+tee /etc/containers/storage.conf << EOF
+[storage]
+# Default Storage Driver, Must be set for proper operation.
+driver = "vfs"
+# Temporary storage location
+runroot = "/run/containers/storage"
+# Primary Read/Write location of container storage
+graphroot = "/var/lib/containers/storage"
+EOF
+
+touch /etc/containers/policy.json
+tee /etc/containers/policy.json << EOF
+{
+    "default": [
+        {
+            "type": "insecureAcceptAnything"
+        }
+    ]
+}
+EOF
 
 # History arrow search
 # https://wiki.archlinux.org/title/bash#History_completion

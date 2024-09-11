@@ -41,14 +41,15 @@ mkdir -p ~/.config/systemd/user/sommelier-x@.service.d/
 
 cat << EOF > ~/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf
 [Service]
-Environment="SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal,<Alt>1,<Alt>2,<Alt>3,<Alt>4,<Alt>5,<Alt>6,<Alt>7,<Alt>8,<Alt>9,print"
+Environment="SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal,<Alt>1,<Alt>2,<Alt>3,<Alt>4,<Alt>5,<Alt>6,<Alt>7,<Alt>8,<Alt>9,print,<Alt>Z,<Alt>X,<Alt>C"
 EOF
 
 cp ~/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf \
    ~/.config/systemd/user/sommelier-x@.service.d/cros-sommelier-x-override.conf
 
-sudo halt --reboot
-
+systemctl --user daemon-reload
+systemctl --user restart sommelier@0.service
+systemctl --user restart sommelier-x@0.service
 
 # Nix install
 # https://github.com/DeterminateSystems/nix-installer

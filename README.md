@@ -39,9 +39,10 @@ sudo apt-get install command-not-found -y && sudo apt update
 mkdir -p ~/.config/systemd/user/sommelier@.service.d/
 mkdir -p ~/.config/systemd/user/sommelier-x@.service.d/
 
+# https://issuetracker.google.com/issues/149234835#comment14
 cat << EOF > ~/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf
 [Service]
-Environment="SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal,<Alt>1,<Alt>2,<Alt>3,<Alt>4,<Alt>5,<Alt>6,<Alt>7,<Alt>8,<Alt>9,print,<Alt>Z,<Alt>X,<Alt>C"
+Environment="SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal,<Alt>1,<Alt>2,<Alt>3,<Alt>4,<Alt>5,<Alt>6,<Alt>7,<Alt>8,<Alt>9,print,<Alt>Z,<Alt>X,<Alt>C,<Control>space"
 EOF
 
 cp ~/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf \

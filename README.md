@@ -13,10 +13,6 @@
   - https://www.reddit.com/r/ChromeOSFlex/comments/swxlz8/tutorial_enable_developer_mode_on_cros/
   - https://www.reddit.com/r/ChromeOSFlex/comments/1449a13/guide_reenable_chromeos_flex_developer_mode/
 
-## Useful Chrome extensions
-- https://chrome.google.com/webstore/detail/window-shortcut-placer-ch/hcbbigdopjopjofpnpojicpkncepklli
-- https://chrome.google.com/webstore/detail/window-relative-position/bkddeedcnaejmjmadijljckjoddhnnfk
-
 ## Channel Update
 chrome://os-settings/help/details
 

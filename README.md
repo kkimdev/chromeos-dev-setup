@@ -53,8 +53,10 @@ systemctl --user restart sommelier-x@0.service
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 # https://nixos.org/manual/nix/stable/command-ref/conf-file.html
-mkdir -p ~/.config/nix/
-echo "experimental-features = nix-command flakes" > ~/.config/nix/nix.conf
+
+# TODO: No longer needed as DeterminateSystems' Nix installer has this config at `/etc/nix/nix.conf` ?
+# mkdir -p ~/.config/nix/
+# echo "experimental-features = nix-command flakes" > ~/.config/nix/nix.conf
 
 ## Nix on Crostini
 ## https://nixos.wiki/wiki/Installing_Nix_on_Crostini

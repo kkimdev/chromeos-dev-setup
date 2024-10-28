@@ -220,7 +220,7 @@ git config --global difftool.diff-code.cmd 'code --wait --new-window --diff $LOC
 ```
 ## Nix upgrade
 ```
-nix upgrade-nix
+sudo -i nix upgrade-nix
 NIXPKGS_ALLOW_UNFREE=1 nix profile upgrade --regex '.*' --impure
 nix store gc
 ```

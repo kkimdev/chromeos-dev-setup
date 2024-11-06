@@ -159,7 +159,10 @@ source ~/.bashrc
 # direnv setup
 # https://direnv.net/docs/hook.html
 nix profile install nixpkgs#direnv
+# Faster Nix-direnv https://github.com/nix-community/nix-direnv
 nix profile install nixpkgs#nix-direnv
+mkdir -p "$HOME/.config/direnv/"
+echo "source $HOME/.nix-profile/share/nix-direnv/direnvrc" > "$HOME/.config/direnv/direnvrc"
 
 append_if_not_exist() {
   # https://stackoverflow.com/a/28021305

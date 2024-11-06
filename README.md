@@ -159,6 +159,8 @@ source ~/.bashrc
 # direnv setup
 # https://direnv.net/docs/hook.html
 nix profile install nixpkgs#direnv
+nix profile install nixpkgs#nix-direnv
+
 append_if_not_exist() {
   # https://stackoverflow.com/a/28021305
   grep -xqF -- "$1" "$2" || echo "$1" >> "$2"

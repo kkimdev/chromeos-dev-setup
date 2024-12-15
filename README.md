@@ -194,7 +194,7 @@ font-style: normal;
 - VS Code: https://stackoverflow.com/a/68972770
 
 ```bash
-nix profile install nixpkgs#nerdfonts
+nix profile install nixpkgs#nerd-fonts.jetbrains-mono
 
 mkdir -p ~/.config/fontconfig/conf.d/
 

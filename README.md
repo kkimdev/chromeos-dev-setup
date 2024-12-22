@@ -76,6 +76,10 @@ nix profile install nixpkgs#podman
 # micro
 nix profile install nixpkgs#micro
 
+# yazi
+# TODO: https://yazi-rs.github.io/docs/quick-start
+nix profile install nixpkgs#yazi
+
 ## https://github.com/containers/podman/issues/2542#issuecomment-522932449
 sudo touch /etc/sub{u,g}id
 sudo usermod --add-subuids 10000-75535 $(whoami)

@@ -23,6 +23,11 @@ Beta channel is recommended
 
 
 ```bash
+append_if_not_exist() {
+  # https://stackoverflow.com/a/28021305
+  grep -xqF -- "$1" "$2" || echo "$1" >> "$2"
+}
+
 # Null command at the end to prevent `apt-get` swallowing the following inputs.
 # https://serverfault.com/questions/342697/prevent-sudo-apt-get-etc-from-swallowing-pasted-input-to-stdin
 sudo apt-get update && sudo apt-get dist-upgrade -y && :
@@ -75,6 +80,7 @@ nix profile install nixpkgs#podman
 
 # micro
 nix profile install nixpkgs#micro
+append_if_not_exist 'EDITOR=micro' ~/.bashrc
 
 # yazi
 # TODO: https://yazi-rs.github.io/docs/quick-start
@@ -168,10 +174,6 @@ nix profile install nixpkgs#nix-direnv
 mkdir -p "$HOME/.config/direnv/"
 echo "source $HOME/.nix-profile/share/nix-direnv/direnvrc" > "$HOME/.config/direnv/direnvrc"
 
-append_if_not_exist() {
-  # https://stackoverflow.com/a/28021305
-  grep -xqF -- "$1" "$2" || echo "$1" >> "$2"
-}
 # shellcheck disable=SC2016  # Intended single quotes
 append_if_not_exist 'eval "$(direnv hook bash)"' ~/.bashrc
 source ~/.bashrc

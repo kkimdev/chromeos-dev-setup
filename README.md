@@ -80,7 +80,7 @@ nix profile install nixpkgs#podman
 
 # micro
 nix profile install nixpkgs#micro
-append_if_not_exist 'EDITOR=micro' ~/.bashrc
+append_if_not_exist 'export EDITOR=micro' ~/.bashrc
 
 # yazi
 # TODO: https://yazi-rs.github.io/docs/quick-start

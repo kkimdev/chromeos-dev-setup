@@ -197,20 +197,12 @@ font-style: normal;
 }
 ```
 
-- VS Code: https://stackoverflow.com/a/68972770
+- VS Code
 
 ```bash
 nix profile install nixpkgs#nerd-fonts.jetbrains-mono
 
-mkdir -p ~/.config/fontconfig/conf.d/
-
-cat << EOF > ~/.config/fontconfig/conf.d/10-nix-fonts.conf
-<?xml version='1.0'?>
-<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
-<fontconfig>
-  <dir>~/.nix-profile/share/fonts/</dir>
-</fontconfig>
-EOF
+# https://stackoverflow.com/a/68972770 doesn't seem needed??
 ```
 ## Github
 

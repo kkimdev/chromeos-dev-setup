@@ -181,6 +181,10 @@ source ~/.bashrc
 # Install fuck
 nix profile install nixpkgs#thefuck
 
+# cros im setup for gtk3
+sudo tee /etc/environment.d/99-cros-im-gtk3.conf <<EOF
+GTK_IM_MODULE_FILE=/usr/lib/x86_64-linux-gnu/gtk-3.0/3.0.0/immodules.cache
+EOF
 ```
 
 ## Nerd font

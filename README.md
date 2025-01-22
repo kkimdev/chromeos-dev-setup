@@ -31,6 +31,7 @@ append_if_not_exist() {
 # Null command at the end to prevent `apt-get` swallowing the following inputs.
 # https://serverfault.com/questions/342697/prevent-sudo-apt-get-etc-from-swallowing-pasted-input-to-stdin
 sudo apt-get update && sudo apt-get dist-upgrade -y && :
+sudo apt autoremove -y && sudo apt autoclean
 
 # Remove unnecessary packages
 sudo apt remove vim command-not-found

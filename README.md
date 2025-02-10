@@ -90,6 +90,11 @@ append_if_not_exist 'export EDITOR="code --wait --new-window"' ~/.bashrc
 # TODO: https://yazi-rs.github.io/docs/quick-start
 nix profile install nixpkgs#yazi
 
+# zellij
+# TODO: one liner .bashrc setup
+#       [ -z "$ZELLIJ" ] && { [ "$ZELLIJ_AUTO_ATTACH" == "true" ] && exec zellij attach -c || exec zellij; [ "$ZELLIJ_AUTO_EXIT" == "true" ] && exit; }
+nix profile install nixpkgs#zellij
+
 ## https://github.com/containers/podman/issues/2542#issuecomment-522932449
 sudo touch /etc/sub{u,g}id
 sudo usermod --add-subuids 10000-75535 $(whoami)

@@ -34,10 +34,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y && :
 sudo apt autoremove -y && sudo apt autoclean
 
 # Remove unnecessary packages
-sudo apt remove vim command-not-found
-
-# command-not-found
-sudo apt-get install command-not-found -y && sudo apt update
+sudo apt remove vim command-not-found -y
 
 # Chrome OS shortcuts in Linux apps
 # https://www.reddit.com/r/Crostini/wiki/enable-chrome-shortcuts-in-linux-apps

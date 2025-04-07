@@ -1,6 +1,7 @@
 # Chromebook Setup
 
 - https://old.reddit.com/r/Crostini/wiki/index
+- https://www.reddit.com/r/ChromeOSFlex/comments/1jp4paa/guide_bringing_android_functionality_to_chromeos/
 
 ## Other things
 - https://wiki.archlinux.org/title/bash

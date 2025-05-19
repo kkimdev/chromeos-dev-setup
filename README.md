@@ -240,7 +240,8 @@ git config --global difftool.diff-code.cmd 'code --wait --new-window --diff $LOC
 ```
 ## Nix upgrade
 ```
-sudo -i nix upgrade-nix
+# https://github.com/DeterminateSystems/nix-installer/issues/1362#issuecomment-2734781878
+sudo -i nix upgrade-nix --profile /nix/var/nix/profiles/default
 NIXPKGS_ALLOW_UNFREE=1 nix profile upgrade --regex '.*' --impure
 nix store gc
 ```

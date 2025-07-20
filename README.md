@@ -198,7 +198,7 @@ GTK_IM_MODULE_FILE=/usr/lib/x86_64-linux-gnu/gtk-3.0/3.0.0/immodules.cache
 EOF
 ```
 
-## Nerd font
+## Google font & Nerd font
 - Crostini Terminal: https://www.reddit.com/r/Crostini/comments/s1dgvk/comment/jm9rix7/?utm_source=share&utm_medium=web2x&context=3
 
 ```css
@@ -215,7 +215,7 @@ font-style: normal;
 - VS Code
 
 ```bash
-nix profile install nixpkgs#nerd-fonts.jetbrains-mono
+nix profile install nixpkgs#nerd-fonts.jetbrains-mono nixpkgs#google-fonts
 
 # https://stackoverflow.com/a/68972770 doesn't seem needed??
 ```

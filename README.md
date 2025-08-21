@@ -319,4 +319,8 @@ format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
 # work laptop config
 ```
 
-
+## Troubleshooting
+```
+# Restarting window manager
+systemctl --user restart sommelier-x@0.service sommelier@0.service
+```

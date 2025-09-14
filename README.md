@@ -196,6 +196,9 @@ nix profile install nixpkgs#thefuck
 sudo tee /etc/environment.d/99-cros-im-gtk3.conf <<EOF
 GTK_IM_MODULE_FILE=/usr/lib/x86_64-linux-gnu/gtk-3.0/3.0.0/immodules.cache
 EOF
+
+# grep auto coloring
+append_if_not_exist "alias grep='grep --color=auto'"
 ```
 
 ## Google font & Nerd font

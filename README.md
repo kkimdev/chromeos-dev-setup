@@ -75,7 +75,7 @@ Environment="XDG_DATA_DIRS=%h/.nix-profile/share:%h/.local/share:%h/.local/share
 EOF
 
 # VS Code
-NIXPKGS_ALLOW_UNFREE=1 nix profile install nixpkgs#vscode-fhs --impure
+NIXPKGS_ALLOW_UNFREE=1 nix profile install nixpkgs#vscode --impure
 
 # Podman
 nix profile install nixpkgs#podman

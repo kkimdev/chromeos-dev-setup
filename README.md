@@ -77,6 +77,9 @@ EOF
 # VS Code
 NIXPKGS_ALLOW_UNFREE=1 nix profile install nixpkgs#vscode --impure
 
+# Antigravity
+NIXPKGS_ALLOW_UNFREE=1 nix profile add nixpkgs#antigravity --impure
+
 # Podman
 nix profile install nixpkgs#podman
 

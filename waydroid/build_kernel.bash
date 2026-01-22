@@ -35,9 +35,8 @@ CHROMEOS_KERNEL_FAMILY=termina ./chromeos/scripts/prepareconfig container-vm-x86
 echo "Applying Binder IPC configurations..."
 ./scripts/config --enable CONFIG_ANDROID
 ./scripts/config --enable CONFIG_ANDROID_BINDER_IPC
-./scripts/config --enable CONFIG_ANDROID_BINDERFS
-./scripts/config --set-str CONFIG_ANDROID_BINDER_DEVICES ""
-
+./scripts/config --disable CONFIG_ANDROID_BINDERFS  # Disable BinderFS
+./scripts/config --set-str CONFIG_ANDROID_BINDER_DEVICES "binder,hwbinder,vndbinder"
 # Refresh config to satisfy dependencies
 make LLVM=1 LLVM_IAS=1 olddefconfig
 # --- AUTOMATION END ---

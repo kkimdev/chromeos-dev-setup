@@ -23,6 +23,7 @@
             git
             openssl
             bc
+            ncurses
             llvm.clang
             llvm.lld
             llvm.bintools
@@ -49,14 +50,13 @@
             export LLVM=1
             export LLVM_IAS=1
 
-            # NIX SPECIFIC FIX: 
+            # NIX SPECIFIC FIX:
             # We use NIX_CFLAGS_COMPILE because the Nix wrapper prioritizes this.
-            # This forces clang to ignore the unused 'nostdlibinc' flag instead of 
+            # This forces clang to ignore the unused 'nostdlibinc' flag instead of
             # letting -Werror turn it into a fatal crash.
             export NIX_CFLAGS_COMPILE="-Wno-error=unused-command-line-argument -Wno-unused-command-line-argument"
-            
-            # Ensure objtool finds libelf
-            export PKG_CONFIG_PATH="${pkgs.elfutils.dev}/lib/pkgconfig"
+
+            export PKG_CONFIG_PATH="${pkgs.elfutils.dev}/lib/pkgconfig:${pkgs.ncurses.dev}/lib/pkgconfig"
           '';
         };
       });

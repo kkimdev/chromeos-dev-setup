@@ -1,6 +1,16 @@
 #!/bin/env bash
 
+# Based on https://gist.github.com/supechicken/e6bb13e2db86a74e831f907805aed078
+
 set -e
+
+# 1. Detect Kernel Version from uname
+# This converts "6.6.99-..." into "6.6"
+KERNEL_VERSION=$(uname -r | cut -d. -f1,2)
+BRANCH="chromeos-${KERNEL_VERSION}"
+
+echo "Detected Kernel Version: $KERNEL_VERSION"
+echo "Targeting Branch: $BRANCH"
 
 # Setup directory
 BUILD_DIR="$(pwd)/kernel_local"
@@ -8,9 +18,14 @@ rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
 
-# Clone
+# 2. Clone using the detected branch
+# Note: --single-branch is added for speed
 git clone https://chromium.googlesource.com/chromiumos/third_party/kernel \
-    cros-kernel -b chromeos-6.12 --depth=1
+    cros-kernel -b "$BRANCH" --depth=1 || {
+        echo "Error: Branch $BRANCH not found on Google Source."
+        exit 1
+    }
+
 cd cros-kernel
 
 # Initial Config

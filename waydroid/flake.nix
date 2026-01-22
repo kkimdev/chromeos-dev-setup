@@ -2,7 +2,6 @@
   description = "Linux kernel development environment using latest LLVM";
 
   inputs = {
-    # Using nixos-unstable to get the most recent LLVM releases
     nixpkgs.url = "github:Nixos/nixpkgs/nixos-unstable";
     utils.url = "github:numtide/flake-utils";
   };
@@ -11,42 +10,53 @@
     utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-        # This alias always points to the highest stable LLVM version in nixpkgs
         llvm = pkgs.llvmPackages_latest;
       in
       {
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [
-            # Build Essentials
-#            gnumake
-#            binutils
-#            flex
-#            bison
-#            bc
-#            elfutils
+            gnumake
+            flex
+            bison
+            pkg-config
+            elfutils
             git
-
-            # Latest LLVM Toolchain
+            openssl
+            bc
             llvm.clang
             llvm.lld
-            llvm.llvm
-            llvm.bintools # Provides llvm-ar, llvm-nm, llvm-objcopy, etc.
+            llvm.bintools
           ];
 
+          hardeningDisable = [ "all" ];
+
           shellHook = ''
-            echo "--- Latest LLVM Environment Loaded ---"
-            echo "Clang: $(clang --version | head -n 1)"
-            
-            # Kernel build overrides
+            echo "--- Latest LLVM Kernel Build Environment Loaded ---"
+
+            # Standard LLVM Toolchain exports
             export CC=clang
+            export HOSTCC=clang
             export LD=ld.lld
+            export HOSTLD=ld.lld
             export AR=llvm-ar
             export NM=llvm-nm
             export STRIP=llvm-strip
             export OBJCOPY=llvm-objcopy
             export OBJDUMP=llvm-objdump
             export READELF=llvm-readelf
-            export HOSTCC=clang
+
+            # Mandatory Kernel Build Flags
+            export LLVM=1
+            export LLVM_IAS=1
+
+            # NIX SPECIFIC FIX: 
+            # We use NIX_CFLAGS_COMPILE because the Nix wrapper prioritizes this.
+            # This forces clang to ignore the unused 'nostdlibinc' flag instead of 
+            # letting -Werror turn it into a fatal crash.
+            export NIX_CFLAGS_COMPILE="-Wno-error=unused-command-line-argument -Wno-unused-command-line-argument"
+            
+            # Ensure objtool finds libelf
+            export PKG_CONFIG_PATH="${pkgs.elfutils.dev}/lib/pkgconfig"
           '';
         };
       });
